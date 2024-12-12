@@ -1,0 +1,64 @@
+﻿
+@model GameCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Game create</h6>
+    </div>
+    <div class="card-body">
+        <form enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input class="form-control" asp-for="Title">
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea class="form-control" asp-for="Description"></textarea>
+                <span class="text-danger" asp-validation-for="Description"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label asp-for="File">Cover Image</label>
+                    <input accept="image/*" class="form-control" asp-for="File">
+                    <span class="text-danger" asp-validation-for="File"></span>
+                </div>
+                
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label asp-for="CostPrice"></label>
+                    <input class="form-control" asp-for="CostPrice">
+                    <span class="text-danger" asp-validation-for="CostPrice"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="SellPrice"></label>
+                    <input class="form-control" asp-for="SellPrice">
+                    <span class="text-danger" asp-validation-for="SellPrice"></span>
+                </div>
+                
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label asp-for="Quantity"></label>
+                    <input class="form-control" asp-for="Quantity">
+                    <span class="text-danger" asp-validation-for="Quantity"></span>
+                </div>
+                
+                    <div class="col">
+                        <label asp-for="GameId"></label>
+                    <input class="form-control" asp-for="GameId">
+                    <span class="text-danger" asp-validation-for="GameId"></span>
+                    </div>
+
+                
+
+            </div>
+            <button type="submit" class="btn btn-primary my-2">Submit</button>
+        </form>
+    </div>
+</div>

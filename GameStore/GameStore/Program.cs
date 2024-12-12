@@ -13,7 +13,7 @@ namespace GameStore
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<GamingStoreDbContext>(opt=>
             {
-                opt.UseSqlServer(builder.Configuration.GetConnectionString("MsSql"));
+                opt.UseSqlServer(builder.Configuration.GetConnectionString("Asus"));
             });
             var app = builder.Build();
 
@@ -31,6 +31,10 @@ namespace GameStore
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.MapControllerRoute(
+               name: "area",
+               pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
 
             app.MapControllerRoute(
                 name: "default",
